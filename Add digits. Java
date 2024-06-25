@@ -1,0 +1,23 @@
+class Solution {
+    public int addDigits(int num) {
+        if(num<10)
+        {
+            return num;
+        }
+        int temp=num;
+        while(temp>9)
+        {
+            temp=givesum(temp,0);
+        }
+        return temp;
+    }
+    public int givesum(int temp,int sum)
+    {
+        if(temp<=0)
+        {
+            return sum;
+        }
+        sum=sum+(temp%10);
+        return givesum(temp/10,sum);    
+    }
+}
